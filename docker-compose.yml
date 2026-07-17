@@ -1,5 +1,8 @@
-
 include:
   - ./compose/portainer.yml
-  - ./compose/watchtower.yml
+#  - ./compose/watchtower.yml
   - ./compose/glances.yml
+  - ./compose/prometheus.yml
+  - ./compose/grafana.yml
+  - ./compose/cadvisor.yml
+  - ./compose/node-exporter.yml
