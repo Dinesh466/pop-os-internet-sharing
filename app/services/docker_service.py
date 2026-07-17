@@ -25,3 +25,35 @@ def list_containers():
         })
 
     return data
+def start_container(name):
+    container = client.containers.get(name)
+    container.start()
+    return {
+        "success": True,
+        "message": f"{name} started"
+    }
+
+
+def stop_container(name):
+    container = client.containers.get(name)
+    container.stop()
+    return {
+        "success": True,
+        "message": f"{name} stopped"
+    }
+
+
+def restart_container(name):
+    container = client.containers.get(name)
+    container.restart()
+    return {
+        "success": True,
+        "message": f"{name} restarted"
+    }
+
+
+def get_logs(name, tail=100):
+    container = client.containers.get(name)
+    return {
+        "logs": container.logs(tail=tail).decode("utf-8")
+    }

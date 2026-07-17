@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse
 
 from app.api.status import router as status_router
 from app.api.containers import router as container_router
-
+from app.api.dashboard import router as dashboard_router
 
 app = FastAPI(
     title="Pop!_OS Internet Sharing Platform",
@@ -11,7 +11,11 @@ app = FastAPI(
 )
 app.include_router(container_router, prefix="/api", tags=["Docker"])
 app.include_router(status_router, prefix="/api", tags=["System"])
-
+app.include_router(
+    dashboard_router,
+    prefix="/api",
+    tags=["Dashboard"],
+)
 
 @app.get("/", response_class=HTMLResponse)
 def home():
