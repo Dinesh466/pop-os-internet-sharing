@@ -1,0 +1,5 @@
+
+include:
+  - ./compose/portainer.yml
+  - ./compose/watchtower.yml
+  - ./compose/glances.yml
