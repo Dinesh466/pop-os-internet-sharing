@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+docker
+psutil
+jinja2
+python-multipart
